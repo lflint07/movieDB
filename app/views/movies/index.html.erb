@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+  <div class="row">
+<% @movies.each do |movie| %>
+  <div class="col-md-6 col-md-6">
+    <div class="thumbnail">
+      <%= link_to image_tag(movie.poster), movie.website, target: "_blank" %>
+
+      <div class="caption">
+        <%= link_to movie.name, movie.website, target: "_blank" %>
+      <div> 
+        <%= movie.description %>
+      </div>
+      <div>
+        <%= movie.rating %>
+      </div>
+      <div>
+        <%= movie.genre.name %>
+      </div>
+      <div>
+        <%= movie.actor.name %>
+      </div>
+        <div>
+        <%= link_to 'Show', movie, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_movie_path(movie), class: "btn btn-warning" %>
+        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+        <% end %>
+ <p>     
+    <strong><%= link_to 'New Movie', new_movie_path %></strong>
+</p>
