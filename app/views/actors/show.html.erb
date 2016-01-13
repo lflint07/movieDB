@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @actor.name %>
-</p>
+<div class="row">
+    <div class="col-md-9 col-md-3">
+      <div class="thumbnail">
+	<div>
+  		<strong>Name:</strong>
+  		<%= @actor.name %>
+	</div>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @actor.bio %>
-</p>
+	<div>
+  		<strong>Bio:</strong>
+  		<%= @actor.bio %>
+	</div>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @actor.genre.name %>
-</p>
+	<div>
+  		<strong>Genre:</strong>
+  		<%= @actor.genre.name %>
+	</div>
 
 <h3>Movies by this Actor:</h3>
 <% if @actor.movies.presence %>
